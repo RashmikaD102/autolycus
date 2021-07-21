@@ -14,7 +14,7 @@ services:
         - FLASK_ENVIRONMENT=prod
         - POSTGRES_HOST=db
       env_file:
-        - ./.env
+        - 'Rusher.env'
       depends_on:
         - db
 
@@ -26,7 +26,7 @@ services:
       ports:
         - 3000:3000
       env_file:
-        - ./.env
+        - 'Rusher.env'
 
   db:
     image: postgres:13-alpine
@@ -35,4 +35,4 @@ services:
     volumes:
       - ./db:/var/lib/postgresql/data
     env_file:
-      - ./.env
+      - 'Rusher.env'
